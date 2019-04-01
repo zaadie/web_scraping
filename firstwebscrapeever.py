@@ -41,5 +41,4 @@ for container in containers:
 
     f.write(brand + "\n")
 
-
 f.close()
