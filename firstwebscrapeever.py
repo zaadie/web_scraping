@@ -15,8 +15,12 @@ uClient.close()
 page_soup = soup(page_html, "html.parser")
 
 # grabs each product
-containers = page_soup.findAll("div", {"class" : "item-container"})
+containers = page_soup.findAll("div", {"class": "item-container"})
 
+filename = "products.csv"
+f = open(filename, "w")
+headers = "brand \n"
+f.write(headers)
 # container = containers[0].img["title"]
 # container = containers[0]
 
@@ -26,10 +30,16 @@ containers = page_soup.findAll("div", {"class" : "item-container"})
 # Only works from index 4+
 # brand[4].div.a.img["title"]
 # containers.findAll("li",{"class":"price-ship"})
-i = 1;
+i = 1
 
 for container in containers:
-	brand = container.img["title"]
-	print(i)
-	print("Brand: " + brand)
-	i+=1
+    brand = container.img["title"]
+
+    print(i)
+    print(brand)
+    i += 1
+
+    f.write(brand + "\n")
+
+
+f.close()
