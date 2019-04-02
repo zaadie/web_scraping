@@ -11,4 +11,4 @@ subreddit = reddit.subreddit('python')
 hot_python = subreddit.hot(limit=5)
 
 for submission in hot_python:
-    print(dir(submission))
+    print(submission.title)
