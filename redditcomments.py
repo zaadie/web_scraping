@@ -1,11 +1,14 @@
 import praw
 
-reddit = praw.Reddit(client_it = 'kTtEDzfVknEtUQ',
-                    client_secret = '6DAtdBN1HJbRnRZAxXvUikyaKKU',
-                    username = 'prawtutorial',
-                    password = 'cookies',
-                    user_agent = 'prawtutorialv1')
+reddit = praw.Reddit(client_id='kTtEDzfVknEtUQ',
+                     client_secret='x',
+                     username='prawtutorial',
+                     password='cookies!!',
+                     user_agent='prawtutorialv1')
 
 subreddit = reddit.subreddit('python')
 
-hot_python = subreddit.hot()
+hot_python = subreddit.hot(limit=5)
+
+for submission in hot_python:
+    print(dir(submission))
